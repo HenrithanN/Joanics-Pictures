@@ -1,0 +1,10 @@
+<bit-search
+  (onTyping)="filtro = $event" [value]="filtro">
+</bit-search>
+<bit-photos
+  [photos]="photos | filterByDescription: filtro">
+</bit-photos>
+<bit-load-button
+  (click)="load()"
+  [hasMore]="hasMore">
+</bit-load-button>

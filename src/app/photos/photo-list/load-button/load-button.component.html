@@ -1,0 +1,7 @@
+<div class="text-center" *ngIf="hasMore; else mensagemSemFotos">
+  <button class="btn btn-primary">Carregar Mais</button>
+</div>
+<ng-template #mensagemSemFotos>
+  <p class="text-center text-muted">Sem mais fotos para carregar</p>
+</ng-template>
+

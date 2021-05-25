@@ -1,0 +1,7 @@
+.break-word{
+  word-break: break-all;
+}
+
+.pointerCursor{
+  cursor: pointer;
+}

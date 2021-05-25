@@ -1,0 +1,20 @@
+<footer class="mt-5" *ngIf="(user$ | async) as user">
+  <div class="fixed-bottom bg-dark p-1">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-6">
+                  <a [routerLink]="['']">
+                      <i class="fa fa-home fa-2x"></i>
+                      Home
+                  </a>
+              </div>
+              <div class="col-6">
+                  <a [routerLink]="['p', 'add']">
+                      <i class="fa fa-plus-circle fa-2x"></i>
+                      Adicionar Fotos
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>

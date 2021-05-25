@@ -1,0 +1,14 @@
+<div class="text-center mt-3 mb-3">
+  <form>
+    <i class="fa fa-search"></i>
+    <input
+      id="pesquisa"
+      type="search"
+      class="rounded"
+      placeholder="Procure uma imagem"
+      (keyup) = "debounce.next($event.target.value)"
+      autofocus
+      [value]="value">
+
+  </form>
+</div>

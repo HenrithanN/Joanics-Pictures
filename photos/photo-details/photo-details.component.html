@@ -1,0 +1,31 @@
+<div class="bg-white border" *ngIf="(photo$ | async) as photo">
+  <div class="row">
+      <div class="col-md-8">
+          <bit-photo [url]="photo.url" [descricao]="photo.description"></bit-photo>
+      </div>
+
+      <div class="col-md-4 p-4">
+          <small>
+
+              <p class="text-left break-word">{{ photo.description }}</p>
+              <div #nodePai class="text-left mb-4">
+                <label for="comentarioInput">
+                  <i showIfLogged class="fa fa-heart-o fa-2x mr-2 pull-left" (click)="likePhoto(photo)"> {{ photo.likes }} </i>
+                  <i class="fa fa-comment-o fa-2x mr-2 ml-2"></i>{{ photo.comments }}
+                </label>
+                <i photoOwnerOnly [ownedPhoto]="photo" [nodePai]="nodePai" class="fa fa-trash-o fa-2x pull-right pointerCursor" (click)="deletePhoto()"></i>
+              </div>
+              <hr>
+          </small>
+
+          <bit-photo-comments *ngIf="photo.allowComments; else warning"
+          [photoId]="photoId">
+          </bit-photo-comments>
+
+          <ng-template #warning>
+            <p>O usuário desabilitou os comentarios para esta foto</p>
+          </ng-template>
+
+      </div>
+  </div>
+</div>
